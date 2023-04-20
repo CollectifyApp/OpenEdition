@@ -162,10 +162,10 @@ contract OpenEdition is ERC2981, ERC721Enumerable, Ownable {
             }
 
         }
+        publicClaimList[claimAddress] = true;
         for(uint256 i; i < quantity; i++){
             _safeMint( claimAddress, supply + i );
         }
-        publicClaimList[claimAddress] = true;
     }
 
     function supportsInterface(bytes4 interfaceId)
